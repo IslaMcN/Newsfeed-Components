@@ -33,3 +33,44 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+const menuButton = document.querySelector('.menu-selector')
+function menuCreator(items){
+  const thing = document.createElement('div')
+  let menu = document.createElement('ul')
+  let item = document.createElement('li');
+ menu.appendChild(menuList);
+ menuList.appendChild(menuListItems);
+
+  item.textContent = items;
+
+  thing.classList.add('.menu')
+
+  thing.addEventListener('click', function openNav() {
+    document.getElementById(".menu").style.width = "250px";
+  },
+  
+  /* Set the width of the side navigation to 0 */
+  function closeNav() {
+    document.getElementById(".menu").style.width = "0";
+  } )
+ return menu
+} 
+
+let containers = document.querySelector('.container')
+
+for(let i = 0; i < menuItems; i++){
+  let menu = menuCreator(menuItems[i]);
+  containers.appendChild(menu);
+}
+
+
+
+
+function openNav() {
+  document.getElementById(".menu").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById(".menu").style.width = "0";
+}

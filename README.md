@@ -75,5 +75,36 @@ Note: Just a reminder the stretch goals are just extra practice using the tools 
 * Component Constructor
   
   Create a function that builds Article components. You are not expected to finish this. This goal is simply an exercise in thinking about how you would implement a function that took some data, created a new Article from it, and appended it to the HTML (without actually writing anything in the HTML file). This is a difficult concept to undertake, but even thinking about how you would implement it will give you a better understanding of how we use frameworks in upcoming sprints. 
+      const articleData = [
+{
+	title:"JavaScript",
+	content: "lorem ipsum" ,
+	imgsrc: "img.png",
+}]
+const article = <article />
+articleData.forEach( data => {
+article.appendChild(createArticle(data.title, data.content, data.imgsrc)})
+
+
+function createArticle(title, content, imgsrc) {
+const journal = document.createElement(article);
+const title = document.createElement('h1');
+const content = document.createElement('p');
+const img = document.createElement('img');
+
+journal.appendChild(title)
+journal.appendChild(content)
+journal.appendChild(img)
+
+journal.classList.add('journal')
+title.classList.add('title')
+content.classList.add('content')
+
+content.textContent = articleData.content
+title.textContent = articleData.title
+img.src = articleData.imgsrc;
+
+return journal
+}
 
 * Implement a way to write your own articles using the Component Constructor and some input fields. 
