@@ -112,3 +112,34 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+const container = document.querySelector('.articles')
+function createComponent(data) {
+  const container = document.createElement('div')
+  const titles = document.createElement('h2')
+  const dates = document.createElement('p')
+  const first = document.createElement('p')
+  const second = document.createElement('p')
+  const third = document.createElement('p')
+  const expand = document.createElement('span')
+
+  container.appendChild(titles);
+  container.appendChild(dates);
+  container.appendChild(first);
+  container.appendChild(second);
+  container.appendChild(third);
+  container.appendChild(expand);
+
+  container.classList.add('.articles')
+  first.classList.add('.article')
+  
+
+
+  
+  expand.addEventListener('click', function(){
+    container.classList.toggle('article-open');
+
+  })
+
+  return createComponent;
+
+}
